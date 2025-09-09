@@ -70,7 +70,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    v-if="colorMode.value === 'dark'"
     class="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-black"
   >
     <div

@@ -24,5 +24,5 @@ export default defineNuxtConfig({
     classSuffix: '',
     storage: 'localStorage', // or 'sessionStorage' or 'cookie'
     storageKey: 'nuxt-color-mode'
-  },
+  }
 });

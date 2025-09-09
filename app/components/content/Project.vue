@@ -44,7 +44,7 @@ onMounted(() => {
 <template>
   <div class="flex flex-col gap-4 justify-center items-center pb-[80px] w-full">
     <div class="bg-[#161513] w-full bg-dark-dots px-20">
-      <div class="py-[80px]">
+      <div class="pb-[80px] pt-[40px]">
         <h3 class="text-gradient font-medium text-[18px]">My impressive projects</h3>
         <div class="flex justify-center flex-col items-start relative w-full">
           <h1 class="text-white text-[32px] font-bold z-[99] absolute">Projects</h1>

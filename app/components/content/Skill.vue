@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-    <div class="flex flex-col gap-4 py-[80px] bg-[#161513] w-full bg-dark-dots pointer-events-none">
+    <div class="flex flex-col gap-4 py-[80px] bg-[#161513] w-full bg-dark-dots">
         <div class="flex justify-center flex-col items-center relative w-full">
             <h1 class="text-white text-[40px] font-bold z-[99] absolute">Skill & Services</h1>
             <div class="w-20 h-7 mt-10 ml-40">

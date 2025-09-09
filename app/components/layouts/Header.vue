@@ -11,6 +11,8 @@ const isMenuOpen = ref(false);
 const colorMode = useColorMode();
 const activeItem = ref<string>("Home");
 
+const headerRef = ref<HTMLElement | null>(null);
+
 const isDark = computed(() => colorMode.value === "dark");
 
 const handleScroll = () => {
@@ -24,10 +26,27 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
 });
+
+const scrollToHref = (href: string) => {
+  if (!href || !href.startsWith('#')) return;
+  const target = document.querySelector(href) as HTMLElement | null;
+  if (!target) return;
+
+  const headerHeight = headerRef.value?.offsetHeight ?? 0;
+  const targetTop = target.getBoundingClientRect().top + window.scrollY;
+  const top = Math.max(targetTop - headerHeight, 0);
+  window.scrollTo({ top, behavior: 'smooth' });
+};
+
+const onClickNav = (item: { name: string; href: string }) => {
+  activeItem.value = item.name;
+  scrollToHref(item.href);
+};
 </script>
 
 <template>
   <div
+    ref="headerRef"
     :class="[
       'fixed w-full z-40 transition-all duration-300',
       isScrolled ? 'py-3 bg-background/80 backdrop-blur-md shadow-xs' : 'py-5',
@@ -35,7 +54,7 @@ onBeforeUnmount(() => {
   >
     <div class="flex items-center justify-between px-20">
       <!-- Logo -->
-      <a class="text-3xl font-bold text-white flex items-center" href="#hero">
+      <a class="text-3xl font-bold text-white flex items-center" href="#hero" @click.prevent="() => { activeItem = 'Home'; scrollToHref('#hero'); }">
         <span class="h-8 w-8 rounded-lg flex items-center justify-center bg-primary-gradient text-xs mr-3">< /></span>
         <span class="text-white">Dong<span class="text-gradient">Le</span></span>
       </a>
@@ -51,7 +70,7 @@ onBeforeUnmount(() => {
             { '!text-white': isDark },
             { 'text-gradient': activeItem === item.name }
           ]"
-          @click.prevent="activeItem = item.name"
+          @click.prevent="onClickNav(item)"
         >
           {{ item.name }}
           <div class="w-5" v-if="activeItem === item.name">
@@ -102,6 +121,7 @@ onBeforeUnmount(() => {
             @click.prevent="
               () => {
                 activeItem = item.name;
+                scrollToHref(item.href);
                 isMenuOpen = false;
               }
             "
