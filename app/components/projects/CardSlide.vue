@@ -24,7 +24,6 @@
         <span class="text-blue-400 font-medium text-[15px]">trungdong11 / {{ title }}</span>
         <span class="ml-4 px-3 py-0.5 rounded-full text-[13px] text-gray-300 border border-[#2A2926]">public</span>
       </div>
-        <!-- Description -->
         <p class="text-white/80 text-s !min-h-[48px]">
           {{ description }}
         </p>
