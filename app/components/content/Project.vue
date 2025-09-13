@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { isVisible, elementRef } = useScrollAnimation()
+
 const listProjects = ref([
   {
     title: 'QUIZZFLY',
@@ -42,9 +44,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 justify-center items-center pb-[80px] w-full">
+  <div ref="elementRef" class="flex flex-col gap-4 justify-center items-center pb-[80px] w-full">
     <div class="bg-[#161513] w-full bg-dark-dots px-20">
-      <div class="pb-[80px] pt-[40px]">
+      <div :class="['pb-[80px] pt-[40px]', isVisible ? 'animate-slideInLeft' : 'opacity-0']">
         <h3 class="text-gradient font-medium text-[18px]">My impressive projects</h3>
         <div class="flex justify-center flex-col items-start relative w-full">
           <h1 class="text-white text-[32px] font-bold z-[99] absolute">Projects</h1>
@@ -103,5 +105,20 @@ onMounted(() => {
   background-color: #fdfdfd;
   background-image: radial-gradient(#cccccc 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
 }
 </style>

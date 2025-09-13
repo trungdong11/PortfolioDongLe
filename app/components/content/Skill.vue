@@ -1,10 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { isVisible, elementRef } = useScrollAnimation()
+</script>
 
 <template>
-    <div class="flex flex-col gap-4 py-[80px] bg-[#161513] w-full bg-dark-dots">
+    <div ref="elementRef" class="flex flex-col gap-4 py-[80px] bg-[#161513] w-full bg-dark-dots">
         <div class="flex justify-center flex-col items-center relative w-full">
-            <h1 class="text-white text-[40px] font-bold z-[99] absolute">Skill & Services</h1>
-            <div class="w-20 h-7 mt-10 ml-40">
+            <h1 :class="['text-white text-[40px] font-bold z-[99] absolute', isVisible ? 'animate-slideInDown' : 'opacity-0']">Skill & Services</h1>
+            <div :class="['w-20 h-7 mt-10 ml-40', isVisible ? 'animate-slideInRight' : 'opacity-0']">
                 <img src="@/assets/images/gradient-shape.svg" class="w-20 h-7" alt="" />
             </div>
         </div>
@@ -81,5 +83,35 @@
   background-color: #fdfdfd;
   background-image: radial-gradient(#cccccc 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.4s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease-out forwards;
 }
 </style>
