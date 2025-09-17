@@ -1,7 +1,7 @@
 <template>
     <div
       ref="nodeRef"
-      class="relative bg-[#1E1D1A] rounded-2xl border border-[#2A2926] shadow-md p-6 w-[420px] flex items-start gap-4"
+      class="relative bg-[#1E1D1A] rounded-2xl border border-[#2A2926] shadow-md p-6 sm:w-[420px] w-full flex items-start gap-4"
     >
       <!-- Horizontal line -->
       <div class="absolute left-0 right-0 top-10 h-px bg-[#2A2926]"></div>

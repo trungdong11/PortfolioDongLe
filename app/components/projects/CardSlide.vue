@@ -6,7 +6,7 @@
   }>();
 </script>
 <template>
-  <div class="relative bg-[#1E1D1A] rounded-2xl border border-[#3a3935] shadow-md w-full flex flex-col gap-4 -mt-14">
+  <div class="sm:-mt-[100px] -mt-0 bg-[#1E1D1A] rounded-2xl border border-[#3a3935] shadow-md w-full flex flex-col gap-4 sm:min-h-[750px] h-full">
     <div class="flex items-center gap-2 py-2 px-4 border-b border-[#3a3935]">
       <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
       <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
