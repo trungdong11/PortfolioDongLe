@@ -1,7 +1,7 @@
 <template>
     <div
       ref="nodeRef"
-      class="relative bg-[#1E1D1A] rounded-2xl border border-[#2A2926] shadow-md p-6 w-80 flex flex-col gap-4"
+      class="relative bg-[#1E1D1A] rounded-2xl border border-[#2A2926] shadow-md p-6 w-80 sm:flex hidden flex-col gap-4"
     >
       <!-- Header -->
       <div class="flex items-start gap-3">

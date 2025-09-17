@@ -9,7 +9,7 @@
       />
   
       <!-- Right nodes -->
-      <div class="ml-52 space-y-10">
+      <div class="sm:ml-52 ml-0 space-y-10">
         <RightNode ref="node1" title="Clean & Intuitive" description="Keep the UI clean with a modern touch without compromising UX" icon="i-material-symbols-palette-outline" color="bg-[#f5ba00]" />
         <RightNode ref="node2" title="Detail Oriented" description="Awareness to ease of access, UI consistency, and improved UX." icon="i-mynaui-target" color="bg-[#fa5bb0]" />
         <RightNode ref="node3" title="Pretty & Optimized" description="Writing clean code is a top priority while keeping it as optimized as possible." icon="i-material-symbols-flash-on-outline-rounded" color="bg-[#378aff]" />

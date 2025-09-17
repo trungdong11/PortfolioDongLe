@@ -3,17 +3,17 @@ const { isVisible, elementRef } = useScrollAnimation()
 </script>
 
 <template>
-    <div ref="elementRef" class="flex flex-col gap-4 py-[80px] bg-[#161513] w-full bg-dark-dots">
+    <div ref="elementRef" class="flex flex-col gap-4 sm:gap-6 md:gap-8 py-12 sm:py-16 md:py-20 lg:py-[80px] bg-[#161513] w-full bg-dark-dots px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div class="flex justify-center flex-col items-center relative w-full">
-            <h1 :class="['text-white text-[40px] font-bold z-[99] absolute', isVisible ? 'animate-slideInDown' : 'opacity-0']">Skill & Services</h1>
-            <div :class="['w-20 h-7 mt-10 ml-40', isVisible ? 'animate-slideInRight' : 'opacity-0']">
-                <img src="@/assets/images/gradient-shape.svg" class="w-20 h-7" alt="" />
+            <h1 :class="['text-white text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold z-[99] absolute', isVisible ? 'animate-slideInDown' : 'opacity-0']">Skill & Services</h1>
+            <div :class="['w-16 h-6 sm:w-18 sm:h-6 md:w-20 md:h-7 mt-8 sm:mt-9 md:mt-10 ml-0 sm:ml-20 md:ml-32 lg:ml-40', isVisible ? 'animate-slideInRight' : 'opacity-0']">
+                <img src="@/assets/images/gradient-shape.svg" class="w-full h-full" alt="" />
             </div>
         </div>
-        <div class="flex flex-col px-20 mt-8">
-            <div class="flex flex-col gap-2 text-white">
-                <p class="text-base font-medium">My favorite tech stack & tools:</p>
-                <div class="flex items-center gap-3">
+        <div class="flex flex-col mt-6 sm:mt-7 md:mt-8">
+            <div class="flex flex-col gap-3 sm:gap-4 md:gap-2 text-white">
+                <p class="text-sm sm:text-base md:text-base font-medium sm:text-left">My favorite tech stack & tools:</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-3">
                     <common-icon-with-tooltip
                         icon="i-lineicons-nodejs"
                         tooltip="Js"
@@ -49,7 +49,7 @@ const { isVisible, elementRef } = useScrollAnimation()
                         tooltip="Tailwind"
                         hoverColor="hover:text-[#38bdf9]"
                     />
-                    <div class="mx-2 w-[2px] h-[20px] bg-white"></div>
+                    <div class="mx-1 sm:mx-2 w-[1px] sm:w-[2px] h-[16px] sm:h-[20px] bg-white"></div>
                     <common-icon-with-tooltip
                         icon="i-humbleicons-git"
                         tooltip="Gitflow"
@@ -66,7 +66,9 @@ const { isVisible, elementRef } = useScrollAnimation()
                         hoverColor="hover:text-[#172B4D]"
                     />
                 </div>
-                <common-flow-chart />
+                <div class="mt-4 sm:mt-6 md:mt-8">
+                    <common-flow-chart />
+                </div>
             </div>
             
         </div>
@@ -76,23 +78,73 @@ const { isVisible, elementRef } = useScrollAnimation()
 .bg-dark-dots {
   background-color: #161513;
   background-image: radial-gradient(#2a2927 1px, transparent 1px);
-  background-size: 24px 24px; /* chỉnh spacing dot */
+  background-size: 16px 16px; /* smaller dots for mobile */
+}
+
+@media (min-width: 640px) {
+  .bg-dark-dots {
+    background-size: 20px 20px; /* medium dots for tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-dark-dots {
+    background-size: 24px 24px; /* original dots for desktop */
+  }
 }
 
 .bg-light-dots {
   background-color: #fdfdfd;
   background-image: radial-gradient(#cccccc 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 16px 16px;
+}
+
+@media (min-width: 640px) {
+  .bg-light-dots {
+    background-size: 20px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-light-dots {
+    background-size: 24px 24px;
+  }
 }
 
 @keyframes slideInDown {
   0% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes slideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-75px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -103,11 +155,37 @@ const { isVisible, elementRef } = useScrollAnimation()
 @keyframes slideInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(75px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
