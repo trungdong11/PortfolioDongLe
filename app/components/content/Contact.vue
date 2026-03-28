@@ -58,9 +58,9 @@ const { isVisible, elementRef } = useScrollAnimation()
                             <path d="M4 4h16v16H4z" stroke-width="1.5" />
                             <path d="M4 7l8 6 8-6" stroke-width="1.5" />
                         </svg>
-                        <a href="mailto:dbluework0811@gmail.com"
+                        <a href="mailto:trungdong0811@gmail.com"
                             class="underline underline-offset-2 text-sky-300 hover:text-sky-200 transition break-all sm:break-normal">
-                            dbluework0811@gmail.com
+                            trungdong0811@gmail.com
                         </a>
                         </td>
                     </tr>

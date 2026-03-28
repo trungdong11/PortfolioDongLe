@@ -16,7 +16,7 @@ const scrollToContact = () => {
             <p class="text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[60px] mb-2 sm:mb-3 md:mb-4">Hi! I'm <span class="text-gradient">DongLe</span>,</p>
             <p class="text-white text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px]">frontend developer based in VietNam.</p>
         </div>
-        <p :class="['text-white w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] font-medium text-center text-sm sm:text-base md:text-lg leading-relaxed', isVisible ? 'animate-slideInRight' : 'opacity-0']">I am a frontend developer from DaNang, VietNam with 3 years of experience in multiple companies, where I have worked on real-world projects and focused on creating seamless, user-friendly experiences.</p>
+        <p :class="['text-white w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] font-medium text-center text-sm sm:text-base md:text-lg leading-relaxed', isVisible ? 'animate-slideInRight' : 'opacity-0']">I am a Frontend Developer based in Da Nang, Vietnam, with 3+ years of experience building high-performance, AI-driven products. Specializing in Vue 3, Nuxt 3, and TypeScript , I focus on transforming complex technologies into seamless, user-centric digital experiences.</p>
         <div class="btn flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8">
             <button @click="scrollToContact" class="w-full sm:min-w-[180px] md:min-w-[200px] px-6 sm:px-8 md:px-[30px] py-3 sm:py-4 md:py-[18px] rounded-full cursor-pointer font-medium text-sm sm:text-base md:text-lg text-white bg-primary-gradient hover:scale-105 transition-transform duration-300">
                 Connect with me
